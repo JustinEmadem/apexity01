@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "tailwindcss";
+
+:root {
+  --color-bg-primary: #101916;
+  --color-bg-secondary: #67A298;
+  --color-bg-tertiary: #074106;
+  --cover-bg-btn: #67A298;
+  --color-hover: #67A298;
+  --color-border: #67A298;
+  --color-text-primary: #67A298;
+  --color-bg-footer: #e8ebec;
+  --color-text-color-primary: #074106;
+}
+
+.bg-primary {
+  background-color: var(--color-bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--color-bg-tertiary);
+}
+
+.text-primary {
+  color: var(--color-text-color-primary);
+}
+
+.bg-btn {
+  background-color: var(--cover-bg-btn);
+}
+
+.border-color {
+  border-color: var(--color-border);
+}
+
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.bg-footer {
+  background-color: var(--color-bg-footer);
+}
+
+.hover-bg:hover {
+  background-color: var(--color-hover);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+

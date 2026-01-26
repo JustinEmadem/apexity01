@@ -1,0 +1,79 @@
+<div>
+  <app-header></app-header>
+</div>
+<div class="flex flex-col items-center text-center px-4 py-10">
+    <p class="text-base font-medium text-slate-600">FAQ</p>
+    <h1 class="text-3xl md:text-4xl font-semibold mt-2">Frequently Asked Questions</h1>
+    <p class="text-sm text-slate-500 mt-4 max-w-sm">
+        Proactively answering FAQs boosts user confidence and cuts down on support tickets.
+    </p>
+
+    <div class="max-w-xl w-full mt-6 flex flex-col gap-4 items-start text-left">
+        <div
+            *ngFor="let faq of faqsData; let i = index; trackBy: trackByIndex"
+            class="faq-item flex flex-col items-start w-full">
+
+            <!-- FAQ Header -->
+            <div
+                (click)="toggleFAQ(i)"
+                class="faq-header flex items-center justify-between w-full cursor-pointer border border-indigo-100 p-4 rounded transition-all hover:border-indigo-200">
+                <h2 class="text-sm">{{ faq.question }}</h2>
+
+                <!-- Icon -->
+                <svg
+                    class="transition-all duration-500 ease-in-out"
+                    [class.rotate-180]="faq.isOpen"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2"
+                        stroke="#1D293D"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+
+            <!-- FAQ Answer -->
+            <p
+                class="faq-answer text-sm text-slate-500 px-4 overflow-hidden transition-all duration-500 ease-in-out"
+                [class.opacity-100]="faq.isOpen"
+                [class.max-h-[300px]]="faq.isOpen"
+                [class.translate-y-0]="faq.isOpen"
+                [class.pt-4]="faq.isOpen"
+                [class.max-h-0]="!faq.isOpen"
+                [class.opacity-0]="!faq.isOpen"
+                [class.-translate-y-2]="!faq.isOpen">
+                {{ faq.answer }}
+            </p>
+        </div>
+    </div>
+</div>
+<form class="flex flex-col items-center text-sm mt-10">
+    <h1 class="text-4xl font-semibold text-slate-700 pb-4">Got some questions?</h1>
+    <p class="text-sm text-gray-500 text-center pb-10">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>Lorem Ipsum has been the industry's standard dummy text.</p>
+
+    <div class="flex flex-col md:flex-row items-center gap-8 w-[350px] md:w-[700px]">
+        <div class="w-full">
+            <label class="text-black/70" for="name">Your Name</label>
+            <input class="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-indigo-300" type="text" required>
+        </div>
+        <div class="w-full">
+            <label class="text-black/70" for="name">Your Email</label>
+            <input class="h-12 p-2 mt-2 w-full border border-gray-500/30 rounded outline-none focus:border-indigo-300" type="email" required>
+        </div>
+    </div>
+
+    <div class="mt-6 w-[350px] md:w-[700px]">
+        <label class="text-black/70" for="name">Question</label>
+        <textarea class="w-full mt-2 p-2 h-40 border border-gray-500/30 rounded resize-none outline-none focus:border-indigo-300" required></textarea>
+    </div>
+
+    <button type="submit" class="mt-5 bg-indigo-600 text-white h-12 w-56 px-4 rounded active:scale-95 transition">Send Question</button>
+</form>
+<div>
+  <app-footer></app-footer>
+</div>

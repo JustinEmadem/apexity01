@@ -1,0 +1,15 @@
+.git
+.gitignore
+.vscode
+.idea
+.cache
+node_modules
+npm-debug.log
+.env
+.env.local
+README.md
+.vscode
+.idea
+*.log
+dist
+coverage

@@ -1,0 +1,45 @@
+<section class="flex flex-col mb-20 items-center text-sm bg-[url('https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/bg-with-grid.png')] bg-cover bg-center bg-no-repeat">
+    <main class="flex flex-col items-center max-md:px-2">
+        <button
+            class="mt-10 mb-6 flex items-center space-x-2 border border-color text-primary text-xs rounded-full px-4 pr-1.5 py-1.5 hover:bg-indigo-50 transition"
+            type="button">
+            <span>
+                Explore how we help you grow!
+            </span>
+            <span class="flex items-center justify-center size-6 p-1 rounded-full bg-secondary">
+                <svg width="14" height="11" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 6.5h14M9.5 1 15 6.5 9.5 12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </span>
+        </button>
+        <h1 class="text-center text-5xl leading-[68px] md:text-6xl md:leading-[80px] font-semibold max-w-4xl text-slate-900">
+            Bringing ideas to life through <span class="text-primary">Digital</span> solutions.
+        </h1>
+        <p class="text-center text-base text-slate-700 max-w-lg mt-2">
+            Our team help you build, test, and deliver websites, applications, and digital solutions efficiently — so you can focus your time and energy on growing your business or succeeding your goals.
+        </p>
+        <div class="flex items-center gap-4 mt-8">
+            <button
+              (click)="openModal()"
+              class="flex items-center gap-2 bg-secondary hover:bg-indigo-800 text-white active:scale-95 rounded-lg px-7 h-11">
+                Get started
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.166 10h11.667m0 0L9.999 4.165m5.834 5.833-5.834 5.834" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="border border-slate-600 active:scale-95 hover:bg-white/10 transition text-slate-600 rounded-lg px-8 h-11">
+                View Our Work
+            </button>
+        </div>
+
+        <img src="assets/backgrounds/cover.png"
+            class="w-full rounded-[15px] max-w-6xl mt-16 image-fade-bottom"
+            alt="hero section showcase"
+        />
+    </main>
+    <app-modal
+      *ngIf="isModalOpen"
+      (close)="closeModal()">
+    </app-modal>
+</section>
