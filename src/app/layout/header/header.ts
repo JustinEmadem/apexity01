@@ -36,7 +36,7 @@ export class Header {
     this.isMobileMenuOpen = false;
   }
 
-    isModalOpen = false;
+  isModalOpen = false;
 
   openModal() {
     this.isModalOpen = true;
